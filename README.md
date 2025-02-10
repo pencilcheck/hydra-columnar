@@ -1,16 +1,23 @@
 [![Hydra - the open source data warehouse](https://raw.githubusercontent.com/hydradatabase/hydra/main/.images/header.png)](https://hydra.so)
 
-# 🐘🤘 Hydra
+# 🐘🤘 Hydra Columnar
 
-**Hydra is open source, column-oriented Postgres. You can query billions of rows instantly on Postgres without code changes. Parallelized analytics in minutes, not weeks.**
+Hydra Colummnar is open source, column-oriented Postgres.
 
-## 🚀 Quick start
+## � Run locally
 
-Try the [Hydra Free Tier](https://dashboard.hydra.so/signup) to create a column-oriented Postgres instance. Then connect to it with your preferred Postgres client (psql, dbeaver, etc).
+The [Docker image](https://github.com/hydradatabase/hydra/pkgs/container/hydra) is a drop-in replacement for [postgres Docker image](https://hub.docker.com/_/postgres).
 
-Alternatively, you can run Hydra [locally](#run-locally).
+You can try out Hydra locally using [docker-compose](https://docs.docker.com/compose/).
 
-## 💪 Benchmarks - fastest Postgres aggregates on earth
+```bash
+git clone https://github.com/hydradatabase/columnar && cd columnar
+cp .env.example .env
+docker compose up
+psql postgres://postgres:hydra@127.0.0.1:5432
+```
+
+## �💪 Benchmarks
 
 Benchmarks were run on a c6a.4xlarge (16 vCPU, 32 GB RAM) with 500 GB of GP2 storage.
 Results in seconds, smaller is better.
@@ -21,13 +28,13 @@ Results in seconds, smaller is better.
 
 This benchmark represents typical workload in the following areas: clickstream and traffic analysis, web analytics, machine-generated data, structured logs, and events data.
 
-![Hydra - the open source data warehouse](https://raw.githubusercontent.com/hydradatabase/hydra/main/.images/FasterthanPG.png)
+![Hydra - the open source data warehouse](https://raw.githubusercontent.com/hydradatabase/columnar/main/.images/FasterthanPG.png)
 
-### For our continuous benchmark results, see [BENCHMARKS](https://github.com/hydradatabase/hydra/blob/main/BENCHMARKS.md).
+For our continuous benchmark results, see [BENCHMARKS](https://github.com/hydradatabase/hydra/blob/main/BENCHMARKS.md).
 
 ## 🙋 FAQs
 
-View complete answers in [our documentation](https://docs.hydra.so/concepts/faqs).
+View complete answers in [our documentation](https://columnar.docs.hydra.so/concepts/faqs).
 
 ### Q: Why is Hydra so fast?
 
@@ -63,23 +70,9 @@ A: Hydra is a Postgres extension, not a fork. Hydra makes use of `tableam` (tabl
 
 ## :technologist: Developer resources
 
-- [CHANGELOG](https://github.com/hydradatabase/hydra/blob/main/CHANGELOG.md) for details of recent changes
-- [GitHub Issues](https://github.com/hydradatabase/hydra/issues) for bugs and missing features
-- [Discord](https://hydra.so/discord) discussion with the Community and Hydra team
-- [Docs](https://docs.hydra.so/) for Hydra features and warehouse ops
-
-## 💻 Run locally
-
-The Hydra [Docker image](https://github.com/hydradatabase/hydra/pkgs/container/hydra) is a drop-in replacement for [postgres Docker image](https://hub.docker.com/_/postgres).
-
-You can try out Hydra locally using [docker-compose](https://docs.docker.com/compose/).
-
-```bash
-git clone https://github.com/hydradatabase/hydra && cd hydra
-cp .env.example .env
-docker compose up
-psql postgres://postgres:hydra@127.0.0.1:5432
-```
+- [CHANGELOG](https://github.com/hydradatabase/columnar/blob/main/CHANGELOG.md) for details of recent changes
+- [GitHub Issues](https://github.com/hydradatabase/columnar/issues) for bugs and missing features
+- [Docs](https://columnar.docs.hydra.so/) for Hydra features and warehouse ops
 
 ## 📝 License
 
